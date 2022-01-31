@@ -1,0 +1,16 @@
+# This workflow will automatically close PRs which are made against this repository
+
+name: Close Pull Request
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: superbrothers/close-pull-request@v3
+      with:
+        # Optional. Post a issue comment just before closing a pull request.
+        comment: "This is a read-only mirror repository which does not accept pull requests. Please make your PR against [https://github.com/mautic/mautic](https://github.com/mautic/mautic). Thanks!"
